@@ -17,7 +17,7 @@ public:
     bool result = true;
     while(m_strm >> m_nbr)
     {
-      result = (m_nbr == 1)? false : true;
+      result = true;
       m_data.resize(m_nbr);
       m_results.resize(m_nbr-1, false);
       std::fill(m_results.begin(), m_results.end(), false);
@@ -27,7 +27,7 @@ public:
         m_strm >> m_data[i];
       }
 
-      for(int i=0; i < m_nbr-1 && result; ++i)
+      for(int i=0; i < m_nbr-1; ++i)
       {
         try
         {
